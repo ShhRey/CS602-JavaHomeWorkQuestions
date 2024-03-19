@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox fx:id="container" fx:controller="tipCalculator.TipCalculatorController"
+      xmlns:fx="http://javafx.com/fxml" spacing="10">
+	
+	<!-- Adding TextField for entering the bill amount -->    
+    <TextField fx:id="amountTextField" promptText="Bill Amount"/>
+    
+    <!-- Creating HBox for displaying tip percentage slider and label -->
+    <HBox spacing="10">
+        <Label text="Tip Percentage:"/>
+        <Slider fx:id="tipPercentageSlider" min="0" max="30" value="10"
+                showTickMarks="true" showTickLabels="true"
+                majorTickUnit="10" minorTickCount="0" blockIncrement="10"/>
+        <Label fx:id="tipPercentageLabel" text="10%"/>
+    </HBox>
+    
+    <!-- Button for calculating tip and total -->
+    <Button text="Calculate" onAction="#calculateButtonPressed"/>
+    
+    <!-- Text field for displaying the calculated tip and total amount -->
+    <TextField fx:id="tipTextField" promptText="Tip" editable="false"/>
+    <TextField fx:id="totalTextField" promptText="Total" editable="false"/>
+</VBox>
