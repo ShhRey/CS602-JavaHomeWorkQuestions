@@ -11,7 +11,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
-import javafx.geometry.Insets;
 import javafx.event.ActionEvent;
 
 public class TipCalculatorController {
@@ -20,7 +19,7 @@ public class TipCalculatorController {
     private static final NumberFormat percent = NumberFormat.getPercentInstance();
     
     // Default tip percentage
-    private BigDecimal tipPercentage = new BigDecimal(0.10);
+    private BigDecimal tipPercentage = new BigDecimal(0.15);
     
     // Reference to the VBox
     @FXML
@@ -46,13 +45,10 @@ public class TipCalculatorController {
     	// Setting rounding mode for currency format
         currency.setRoundingMode(RoundingMode.HALF_UP);
         
-        // Setting padding programmatically
-        container.setPadding(new Insets(10, 10, 10, 10));
-        
         // Creating listener for changes in tip percentage slider
         tipPercentageSlider.valueProperty().addListener(
             (observable, oldValue, newValue) -> {
-                tipPercentage = BigDecimal.valueOf(newValue.doubleValue() / 100.0);
+                tipPercentage = BigDecimal.valueOf(newValue.intValue() / 100.0);
                 tipPercentageLabel.setText(percent.format(tipPercentage));
             }
         );
@@ -66,7 +62,7 @@ public class TipCalculatorController {
             BigDecimal amount = new BigDecimal(amountTextField.getText());
             // Check if Input Amount is greater than 0 or not
             if (amount.compareTo(BigDecimal.ZERO) <= 0) {
-            	amountTextField.setText("Only Positive Numbers are accepted !");
+            	amountTextField.setText("Only Positive Numbers !");
             	tipTextField.setText("N/A");
             	totalTextField.setText("N/A");
             }
