@@ -9,7 +9,7 @@ public class ValidateInput {
 
     // Allows uppercase and lowercase letters and may include an apostrophe or hyphen
     public static boolean validateLastName(String lastName) {
-        return lastName.matches("[A-Z]+(['-][a-zA-Z]+)*");
+        return lastName.matches("[a-zA-Z]+(['-][a-zA-Z]+)*");
     }
 
     // Numbers followed by a space and street name (which may include spaces)

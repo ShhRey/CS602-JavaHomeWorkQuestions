@@ -1,9 +1,11 @@
 // Fig. 14.21: Validate.java
 // Input and validate data from user using the ValidateInput class.
 
+import java.util.Scanner;
+
 public class Validate {
     public static void main(String[] args) {
-    	// Create scanner to obtain input from command window
+    	// Create scanner to obtain input from command window 
         Scanner scanner = new Scanner(System.in);
         
         // Create Custom Input Placeholders for users
@@ -23,35 +25,34 @@ public class Validate {
         String phone = scanner.nextLine();
 
         // Validate user inputs
-        StringBuilder errors = new StringBuilder();
+        System.out.println("Validate Result: ");
+        
+        // Display Error Messages
         if (!ValidateInput.validateFirstName(firstName)) {
-            errors.append("Invalid first name.\n");
+        	System.out.println("Invalid First Name");
         }
-        if (!ValidateInput.validateLastName(lastName)) {
-            errors.append("Invalid last name.\n");
+        else if (!ValidateInput.validateLastName(lastName)) {
+        	System.out.println("Invalid Last Name");
         }
-        if (!ValidateInput.validateAddress(address)) {
-            errors.append("Invalid address.\n");
+        else if (!ValidateInput.validateAddress(address)) {
+        	System.out.println("Invalid Address");
         }
-        if (!ValidateInput.validateCity(city)) {
-            errors.append("Invalid city.\n");
+        else if (!ValidateInput.validateCity(city)) {
+        	System.out.println("Invalid City Name");
         }
-        if (!ValidateInput.validateState(state)) {
-            errors.append("Invalid state.\n");
+        else if (!ValidateInput.validateState(state)) {
+        	System.out.println("Invalid State Name");
         }
-        if (!ValidateInput.validateZip(zip)) {
-            errors.append("Invalid zip code.\n");
+        else if (!ValidateInput.validateZip(zip)) {
+        	System.out.println("Invalid ZipCode");
         }
-        if (!ValidateInput.validatePhone(phone)) {
-            errors.append("Invalid phone number.\n");
+        else if (!ValidateInput.validatePhone(phone)) {
+        	System.out.println("Invalid Phone Number");
         }
-
-        // Display error messages or Thank you message
-        if (errors.length() > 0) {
-            System.out.println("\nValidation Errors:\n" + errors.toString());
-        } else {
-            System.out.println("Valid input. Thank you.");
+        else {
+        	System.out.println("Valid Input. Thank you !");
         }
+        // Closing Scanner
         scanner.close();
     }
 }

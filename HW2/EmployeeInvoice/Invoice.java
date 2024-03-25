@@ -7,7 +7,7 @@ public class Invoice implements Payable {
     private final int quantity;
     private final double pricePerItem;
 
-    // constructor
+    // Create constructor
     public Invoice(String partNumber, String partDescription, int quantity, double pricePerItem) {
     	if (quantity < 0) {
     		throw new IllegalArgumentException("Quantity must be >= 0");
@@ -23,29 +23,30 @@ public class Invoice implements Payable {
     	this.pricePerItem = pricePerItem;
     }
     
-    // get partNumber
+    // return partNumber
 	public String getPartNumber() {
 		return partNumber;
 	}
-	// get Part Description
+	// return Part Description
 	public String getPartDescription() {
 		return partDescription;
 	}
-	// get Quantity
+	// return Quantity
 	public int getQuantity() {
 		return quantity;
 	}
-	
+	// return pricePerItem 
 	public double getPricePerItem() {
 		return pricePerItem;
 	}
 	
+	// return all variables
 	@Override
 	public String toString() {
 		return String.format("%s: %n%s: %s (%s) %n%s: %d %n%s: $%,.2f", "invoice", "part number", getPartNumber(), getPartDescription(), "quantity", getQuantity(), "price per item", getPricePerItem());
 	}
 	
-	// method required to carry out contract with interface Payable
+	// return Payment Amount for Invoice
 	@Override
 	public double getPaymentAmount() {
 		return getQuantity() * getPricePerItem();
