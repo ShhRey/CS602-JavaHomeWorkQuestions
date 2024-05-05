@@ -1,17 +1,6 @@
 ## Coursework Structure
 
-The codes in this repository are added in different phases, corresponding to homework assignments as and when they are assigned by our professor Hsu Donald. The assignments may include both group and individual questions.
-
-### Homework Assignments
-
-Below is a list of homework assignments already submitted, along with the respective Java code files:
-
-- **Homework 1**
-  - `Analysis.java`
-  - `Craps.java`
-  - `GradeBook.java` + `GradeBookTest.java`
-  - `TicTacToe.java`
-
+The codes in this repository are added in different phases, corresponding to homework assignments as and when assigned by Prof. Hsu Donald. The assignments may include both group and individual questions.
 More assignments and their code files will be added as the course progresses.
 
 ## Running the Codes
